@@ -4,38 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elysia Lunar — A Lunar MMORPG on Robinhood Chain</title>
-<meta name="description" content="Elysia Lunar is a lunar MMORPG in development on Robinhood Chain. 28-day Lunar Cycles, five realms, Lunar Covens, the Colosseum of Tides, and the $SIA token.">
+<meta name="description" content="Elysia Lunar is a lunar MMORPG in development on Robinhood Chain. Meet the Moon Relic NFT heroes, battle moon bosses in a party of five, and fight through 28-day Lunar Cycles powered by $SIA.">
 <style>
   :root{
-    --bg:#0b0620; --bg2:#150a38; --card:#1a0f42; --line:#3a2a7a;
-    --gold:#f5c542; --gold2:#ffd94d; --violet:#8b7bd8; --text:#efeaff; --muted:#b9aede;
+    --bg:#070418; --bg2:#100830; --card:#170d3d; --line:#3a2a7a;
+    --gold:#f5c542; --gold2:#ffd94d; --violet:#9d8cff; --pink:#ff7ad9; --text:#f2eeff; --muted:#bcb1e6;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
   a{color:var(--gold2)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  header{position:sticky;top:0;background:rgba(11,6,32,.92);border-bottom:1px solid var(--line);z-index:10;backdrop-filter:blur(6px)}
-  .nav{display:flex;align-items:center;gap:18px;padding:12px 0}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;background:rgba(7,4,24,.94);border-bottom:1px solid var(--line);z-index:10;backdrop-filter:blur(6px)}
+  .nav{display:flex;align-items:center;gap:16px;padding:11px 0}
   .nav img{width:42px;height:42px;border-radius:50%}
   .nav .brand{font-size:22px;letter-spacing:2px;color:#fff;font-weight:bold}
-  .nav .links{margin-left:auto;display:flex;gap:18px;font-family:Arial,sans-serif;font-size:14px}
+  .nav .links{margin-left:auto;display:flex;gap:16px;font-family:Arial,sans-serif;font-size:14px;flex-wrap:wrap}
   .nav .links a{color:var(--muted);text-decoration:none}
   .nav .links a:hover{color:var(--gold2)}
-  .hero{position:relative;text-align:center;padding:110px 20px 90px;background:url('assets/hero-moon-valley.png') center/cover no-repeat}
-  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,6,32,.55),rgba(11,6,32,.88))}
+  .hero{position:relative;text-align:center;padding:120px 20px 100px;background:url('assets/key-visual.jpg') center 30%/cover no-repeat}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,4,24,.45),rgba(7,4,24,.72) 60%,rgba(7,4,24,.96))}
   .hero>*{position:relative}
   .badge{display:inline-block;font-family:Arial,sans-serif;font-size:13px;letter-spacing:1px;color:#0b0620;background:var(--gold);border-radius:20px;padding:5px 16px;font-weight:bold}
-  .hero h1{font-size:64px;letter-spacing:6px;color:#fff;margin:22px 0 6px;text-shadow:0 4px 24px rgba(0,0,0,.7)}
-  .hero .tag{font-size:22px;color:var(--gold2);font-style:italic}
-  .hero p{max-width:680px;margin:18px auto 0;color:#e6defc}
-  .cta{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .btn{font-family:Arial,sans-serif;font-weight:bold;text-decoration:none;padding:13px 28px;border-radius:8px;font-size:15px}
-  .btn-gold{background:var(--gold);color:#0b0620}
-  .btn-ghost{border:1px solid var(--gold);color:var(--gold2)}
+  .hero h1{font-size:70px;letter-spacing:7px;color:#fff;margin:22px 0 4px;text-shadow:0 0 34px rgba(245,197,66,.45),0 4px 24px rgba(0,0,0,.8)}
+  .hero .tag{font-size:23px;color:var(--gold2);font-style:italic;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+  .hero p{max-width:700px;margin:18px auto 0;color:#eee9ff;text-shadow:0 2px 10px rgba(0,0,0,.85)}
+  .cta{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{font-family:Arial,sans-serif;font-weight:bold;text-decoration:none;padding:14px 30px;border-radius:8px;font-size:15px}
+  .btn-gold{background:var(--gold);color:#0b0620;box-shadow:0 0 22px rgba(245,197,66,.35)}
+  .btn-ghost{border:1px solid var(--gold);color:var(--gold2);background:rgba(7,4,24,.55)}
   section{padding:64px 0}
-  h2{font-size:34px;color:#fff;letter-spacing:1px;margin-bottom:8px}
+  h2{font-size:36px;color:#fff;letter-spacing:1px;margin-bottom:8px}
   h2 .accent{color:var(--gold)}
-  .sub{color:var(--muted);max-width:720px;margin-bottom:34px}
+  .sub{color:var(--muted);max-width:760px;margin-bottom:34px}
+  .heroes{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:18px}
+  .hero-card{background:var(--card);border-radius:14px;overflow:hidden;border:2px solid var(--line);transition:transform .15s ease, box-shadow .15s ease}
+  .hero-card:hover{transform:translateY(-5px)}
+  .hero-card.legendary{border-color:var(--gold);box-shadow:0 0 24px rgba(245,197,66,.28)}
+  .hero-card.epic{border-color:#7a4fd0;box-shadow:0 0 18px rgba(157,140,255,.22)}
+  .hero-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .hero-card .body{padding:14px 16px 18px}
+  .rarity{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:2px}
+  .legendary-t{color:var(--gold2)} .epic-t{color:var(--violet)}
+  .stars{color:var(--gold);font-size:15px;letter-spacing:2px}
+  .hero-card h3{color:#fff;font-size:21px;margin:4px 0 0}
+  .hero-card .title{color:var(--gold2);font-style:italic;font-size:14px}
+  .hero-card .role{color:var(--muted);font-size:13.5px;margin-top:8px;font-family:Arial,sans-serif}
+  .wide-img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
   .card h3{color:var(--gold2);font-size:20px;margin-bottom:8px}
@@ -59,7 +73,7 @@
     <img src="assets/logo-gold.png" alt="Elysia Lunar logo">
     <div class="brand">ELYSIA LUNAR</div>
     <nav class="links">
-      <a href="#world">World</a><a href="#classes">Classes</a><a href="#cycle">Lunar Cycle</a><a href="#token">Token</a><a href="guide.html">Game Guide</a>
+      <a href="#heroes">Heroes</a><a href="#gameplay">Gameplay</a><a href="#world">World</a><a href="#cycle">Lunar Cycle</a><a href="#token">Token</a><a href="guide.html">Game Guide</a>
     </nav>
   </div>
 </header>
@@ -68,52 +82,98 @@
   <span class="badge">IN DEVELOPMENT — BETA NOT OPEN YET</span>
   <h1>ELYSIA LUNAR</h1>
   <div class="tag">A lunar MMORPG on Robinhood Chain</div>
-  <p>The moon of Elysia has shattered, and its five great seas drift apart — held together only by golden moon-thread. Become a Drifter, sail the thread between realms, and fight for your Coven under a moon that changes the world every 28 days.</p>
+  <p>The moon of Elysia has shattered, and its five great seas drift apart — held together only by golden moon-thread. Become a Drifter, build your party of Moon Relic heroes, and fight under a moon that changes the world every 28 days.</p>
   <div class="cta">
-    <a class="btn btn-gold" href="guide.html">Read the Game Guide</a>
-    <a class="btn btn-ghost" href="https://x.com/elysialunaryarn" target="_blank" rel="noopener">Follow on X</a>
+    <a class="btn btn-gold" href="#heroes">Meet the Heroes</a>
+    <a class="btn btn-ghost" href="guide.html">Game Guide</a>
   </div>
 </div>
 
-<section id="pillars">
+<section id="heroes">
   <div class="wrap">
-    <h2>Built on <span class="accent">four pillars</span></h2>
-    <p class="sub">A seasonal MMORPG where the moon itself is the game master. Every system below is designed around one idea: the world resets with the moon, but what you truly own never disappears.</p>
-    <div class="grid">
-      <div class="card"><div class="icon">🌙</div><h3>28-Day Lunar Cycles</h3><p>Seasons follow the real phases of the moon. New Moon opens world events, Waxing brings Coven wars, Full Moon unlocks the raid realm and the Colosseum finals, and Waning locks the rankings.</p></div>
-      <div class="card"><div class="icon">🧶</div><h3>Lunar Covens</h3><p>Guilds of up to 40 Drifters with a shared hall and vault. Fight for territory on the Tidefall Coast and finish in the Top 10 Covens of the cycle.</p></div>
-      <div class="card"><div class="icon">🏟️</div><h3>Colosseum of Tides</h3><p>The personal arena ladder. Climb into the Top 300 before rankings lock on day 27 and take home season honours — titles, cosmetics, and a share of the cycle's $SIA rewards allocation.</p></div>
-      <div class="card"><div class="icon">🌘</div><h3>Moonfall Reset</h3><p>When a cycle ends, levels reset and ordinary gear becomes Legacy Thread — but Moon Relics, titles and your Coven persist forever. Nothing you truly own is ever deleted.</p></div>
+    <h2>Moon Relic <span class="accent">NFT Heroes</span></h2>
+    <p class="sub">The first Moon Relic collection: five heroes, five classes, one party. Moon Relics are the NFT heroes of Elysia Lunar — they persist through every Moonfall Reset, forever. Every account also starts with a free Drifter hero, so nobody needs to own a Relic to play.</p>
+    <div class="heroes">
+      <div class="hero-card legendary">
+        <img src="assets/char-moonblade.jpg" alt="Selene, Moonblade hero">
+        <div class="body">
+          <div class="rarity legendary-t">LEGENDARY</div>
+          <div class="stars">★★★★★</div>
+          <h3>SELENE</h3>
+          <div class="title">Blade of the First Moon</div>
+          <div class="role">MOONBLADE — Melee DPS<br>Combo chains grow stronger as the moon waxes.</div>
+        </div>
+      </div>
+      <div class="hero-card legendary">
+        <img src="assets/char-tidecaller.jpg" alt="Marin, Tidecaller hero">
+        <div class="body">
+          <div class="rarity legendary-t">LEGENDARY</div>
+          <div class="stars">★★★★★</div>
+          <h3>MARIN</h3>
+          <div class="title">Voice of the Tides</div>
+          <div class="role">TIDECALLER — Caster DPS<br>Tide spells rise and fall with the cycle phase.</div>
+        </div>
+      </div>
+      <div class="hero-card epic">
+        <img src="assets/char-threadweaver.jpg" alt="Aria, Threadweaver hero">
+        <div class="body">
+          <div class="rarity epic-t">EPIC</div>
+          <div class="stars">★★★★</div>
+          <h3>ARIA</h3>
+          <div class="title">Weaver of the Golden Thread</div>
+          <div class="role">THREADWEAVER — Healer / Support<br>Stitches fallen allies back into the fight.</div>
+        </div>
+      </div>
+      <div class="hero-card epic">
+        <img src="assets/char-starhunter.jpg" alt="Vega, Starhunter hero">
+        <div class="body">
+          <div class="rarity epic-t">EPIC</div>
+          <div class="stars">★★★★</div>
+          <h3>VEGA</h3>
+          <div class="title">Arrow of the Fallen Stars</div>
+          <div class="role">STARHUNTER — Ranged DPS<br>Devastating burst during the Full Moon phase.</div>
+        </div>
+      </div>
+      <div class="hero-card epic">
+        <img src="assets/char-palewarden.jpg" alt="Pell, Pale Warden hero">
+        <div class="body">
+          <div class="rarity epic-t">EPIC</div>
+          <div class="stars">★★★★</div>
+          <h3>PELL</h3>
+          <div class="title">The Unmoving Moon</div>
+          <div class="role">PALE WARDEN — Tank<br>A moon-stone shield that holds the whole line.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="world" class="alt">
+<section id="gameplay" class="alt">
+  <div class="wrap">
+    <h2>Party up. <span class="accent">Bring down the moon.</span></h2>
+    <p class="sub">Concept art — the Pale Golem, first world boss of the Mare of First Light. Elysia Lunar is played in parties of five: one of each class, built to cover each other's weaknesses.</p>
+    <img class="wide-img" src="assets/battle-scene.jpg" alt="A party of five heroes battling the crystal Pale Golem under the full moon">
+    <div class="grid" style="margin-top:22px">
+      <div class="card"><div class="icon">👹</div><h3>World Boss Raids</h3><p>Rotating moon bosses across the five realms. The Pale Wastes raid opens only at Full Moon — the hardest fights in Elysia, and the best loot.</p></div>
+      <div class="card"><div class="icon">🏟️</div><h3>Colosseum of Tides</h3><p>The ranked arena ladder. Gear is normalised inside — skill and build decide who reaches the Top 300 before rankings lock on day 27.</p></div>
+      <div class="card"><div class="icon">⚔️</div><h3>Coven Wars</h3><p>Guilds of up to 40 Drifters — Lunar Covens — battle for territory on the Tidefall Coast during the Waxing phase of every cycle.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="world">
   <div class="wrap">
     <h2>The five <span class="accent">shattered seas</span></h2>
-    <p class="sub">After the Pale Sundering, the moon's five maria became floating realms stitched together by moon-thread. Each has its own role in your journey.</p>
+    <p class="sub">After the Pale Sundering, the moon's five maria became floating realms stitched together by golden moon-thread.</p>
+    <img class="wide-img" src="assets/hero-moon-valley.png" alt="The golden moon rising over the shattered seas of Elysia" style="margin-bottom:22px">
     <table>
       <tr><th>Realm</th><th>Role</th><th>What happens there</th></tr>
-      <tr><td><b>Mare of First Light</b></td><td>Starter realm</td><td>Gentle tides, the Drifter tutorial, and your first world boss.</td></tr>
+      <tr><td><b>Mare of First Light</b></td><td>Starter realm</td><td>Gentle tides, the Drifter tutorial, and the Pale Golem world boss.</td></tr>
       <tr><td><b>Golden Thread Fields</b></td><td>Crafting heartland</td><td>Gathering, thread-crafting, and the player-driven materials economy.</td></tr>
       <tr><td><b>Obsidian Highlands</b></td><td>High-level PvE</td><td>Elite hunts and rotating world bosses for geared parties.</td></tr>
       <tr><td><b>Tidefall Coast</b></td><td>Coven war front</td><td>Territory control battles between Covens during the Waxing phase.</td></tr>
-      <tr><td><b>The Pale Wastes</b></td><td>Endgame raid realm</td><td>Opens only at Full Moon. The hardest fights in Elysia — and the best loot.</td></tr>
+      <tr><td><b>The Pale Wastes</b></td><td>Endgame raid realm</td><td>Opens only at Full Moon. The hardest fights in Elysia.</td></tr>
     </table>
-  </div>
-</section>
-
-<section id="classes">
-  <div class="wrap">
-    <h2>Choose your <span class="accent">class</span></h2>
-    <p class="sub">Every account starts free with a Drifter of any class. Optional NFT Moon Relics add skins and relic gear — cosmetics and convenience, never power a free player cannot match through play.</p>
-    <div class="grid">
-      <div class="card"><div class="icon">🌔</div><h3>Moonblade</h3><p>Melee DPS. Lunar combo chains that grow stronger as the cycle moves toward Full Moon.</p></div>
-      <div class="card"><div class="icon">🌊</div><h3>Tidecaller</h3><p>Caster DPS. Tide spells keyed to the current phase — plan your burst around the moon.</p></div>
-      <div class="card"><div class="icon">🧵</div><h3>Threadweaver</h3><p>Healer and support. Weaves moon-thread into healing and can stitch a fallen ally back into the fight.</p></div>
-      <div class="card"><div class="icon">⭐</div><h3>Starhunter</h3><p>Ranged DPS. Marks targets from the dark; devastating burst during the Full Moon phase.</p></div>
-      <div class="card"><div class="icon">🪨</div><h3>Pale Warden</h3><p>Tank. Shields of moon-stone and a taunt aura that holds the line for the whole party.</p></div>
-    </div>
   </div>
 </section>
 
@@ -121,7 +181,7 @@
   <div class="wrap split">
     <div>
       <h2>One moon, <span class="accent">four phases</span></h2>
-      <p class="sub" style="margin-bottom:16px">Each 28-day Lunar Cycle moves through the same four phases — so every player, new or veteran, always knows what the moon brings next.</p>
+      <p class="sub" style="margin-bottom:16px">Seasons are 28-day Lunar Cycles. When a cycle ends, the Moonfall Reset turns levels back to 1 and ordinary gear into Legacy Thread — but Moon Relics, titles and your Coven persist forever.</p>
       <table>
         <tr><th>Phase</th><th>Days</th><th>Focus</th></tr>
         <tr><td><b>New Moon</b></td><td>1–3</td><td>World events open, double gathering, cycle quests</td></tr>
@@ -141,7 +201,7 @@
       <h2>Powered by <span class="accent">$SIA</span></h2>
       <p style="color:var(--muted);margin-bottom:14px">Elysia Lunar the game is built around Elysia Lunar the token. <b style="color:var(--text)">$SIA</b> has a fixed supply of <b style="color:var(--text)">1,000,000,000</b> with no mint function — the game creates no new tokens, ever. 750,000,000 $SIA is locked in a vesting vault.</p>
       <p style="color:var(--muted);margin-bottom:14px">In-game, $SIA is the premium currency for Moon Relic minting and cosmetics, and the currency of season rewards. The everyday in-game currency is <b style="color:var(--text)">Moonshards</b>, earned from the arena, dailies and world events, with a published per-cycle issuance that can only decrease over time.</p>
-      <p style="color:var(--muted)">Free to play, forever. The cash shop sells cosmetics and convenience only — never power.</p>
+      <p style="color:var(--muted)">Free to play, forever. The shop sells cosmetics and convenience only — never power.</p>
     </div>
   </div>
 </section>
@@ -149,9 +209,9 @@
 <section class="alt">
   <div class="wrap faq">
     <h2>Questions</h2>
-    <p><b>Is the game playable now?</b><br>No — Elysia Lunar is in development. This site is the concept and design phase; a playable browser beta (one realm, three classes, arena ladder) comes next, then the full five-realm launch and Cycle 1.</p>
-    <p><b>Do I need to buy anything to play?</b><br>No. Every account starts with a free Drifter character. Moon Relics are optional.</p>
-    <p><b>What happens to my items when a season ends?</b><br>Levels reset and ordinary gear converts to Legacy Thread (prestige currency). Moon Relics, titles and Coven membership are permanent.</p>
+    <p><b>Is the game playable now?</b><br>No — Elysia Lunar is in development. This site presents the game's world, heroes and systems; a playable browser beta (one realm, three classes, arena ladder) comes next, then the full five-realm launch and Cycle 1. All art on this page is concept art.</p>
+    <p><b>Do I need an NFT to play?</b><br>No. Every account starts with a free Drifter hero. Moon Relic NFTs are the collectible heroes — optional, permanent, and never required.</p>
+    <p><b>What happens to my heroes when a season ends?</b><br>Moon Relics, titles and Coven membership are permanent. Levels reset and ordinary gear converts to Legacy Thread (prestige currency).</p>
     <p><b>Where are announcements posted?</b><br>Only on the official X account, <a href="https://x.com/elysialunaryarn" target="_blank" rel="noopener">@ElysiaLunarYarn</a>. Beware of impersonators.</p>
   </div>
 </section>
@@ -159,7 +219,7 @@
 <footer>
   <div class="wrap">
     <p>ELYSIA LUNAR — a game in development on Robinhood Chain. Community first, always DYOR.</p>
-    <p style="margin-top:8px">This website presents a game concept under development. Nothing here is financial advice or a promise of earnings, returns, or token price. Game parameters may be tuned before launch. $SIA is a community token; its market price is set by traders and can go to zero.</p>
+    <p style="margin-top:8px">This website presents a game concept under development; all artwork is concept art. Nothing here is financial advice or a promise of earnings, returns, or token price. Game parameters may be tuned before launch. $SIA is a community token; its market price is set by traders and can go to zero.</p>
   </div>
 </footer>
 </body>
